@@ -7,8 +7,9 @@
 <body>
 <script>
     let deszcz = true;
-    let temperatura = 15;
-    if (temperatura > 20 && !deszcz) {
+    let temperatura = -21;
+    let mam_parasolke = true;
+    if ((temperatura > 20) && (!deszcz || mam_parasolke)) {
         console.log("Idziemy na spacer");
     } else {
         console.log("Zostajemy w domu");

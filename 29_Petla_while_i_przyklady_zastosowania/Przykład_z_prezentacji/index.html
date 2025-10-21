@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Przykład z prezentacji</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt('Podaj n'));
+    let a = " ";
+    let L = 0; let S = 0;
+    while(!(a===0) && L<n) {
+        L=L+1;
+        S=S+a*1;
+        a = parseInt(prompt('Podaj a:'));
+        document.write(`a = ${a}<br>`)
+    }
+    document.write(`n = ${n}<br>`);
+    document.write(`Suma = ${S}<br>`);
+    document.write(`Liczba składników = ${L}<br>`);
+</script>
+</body>
+</html>
