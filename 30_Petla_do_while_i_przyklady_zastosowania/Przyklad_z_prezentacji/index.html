@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pętla do..while</title>
+</head>
+<body>
+<script>
+    let a,L,S;
+    L=0;
+    S=0;
+    do {
+        a=parseInt(prompt('Podaj a:'));
+        document.write(`a = ${a}<br>`);
+        L = L+1;
+        S=S+a;
+    }while(S<=100);
+    document.write(`Suma S = ${S}<br> Liczba składników L=${L}<br>`);
+</script>
+</body>
+</html>
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Przykład pętli for</title>
+</head>
+<body>
+<script>
+    let N, Silnia;
+    Silnia = 1;
+    N = parseInt(prompt('Podaj N (0<=N<=7)'));
+
+    if (N < 0 || N > 7) {
+        document.write('Podano nieprawidłową wartość N. Wartość musi być z zakresu 0-7.');
+    } else {
+        if (N >= 2) {
+            for (let i = 2; i <= N; i++) {
+                Silnia = Silnia * i;
+            }
+        }
+        document.write(`Silnia z ${N} wynosi ${Silnia}`);
+    }
+</script>
+</body>
+</html>
