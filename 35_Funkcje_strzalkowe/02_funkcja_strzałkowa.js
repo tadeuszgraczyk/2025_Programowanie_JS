@@ -1,5 +1,7 @@
 /*
-Aby zamienić klasyczne funkcje anonimowe na funkcje strzałkowe, wystarczy, że pozbędziemy się słowa function, a następnie umieścimy => pomiędzy nawiasem zamykającym parametry a tym określającym ciało funkcji. Poniżej przedstawione są wcześniejsze przykłady, ale zapisane już za pomocą nowej notacji.*/
+Aby zamienić klasyczne funkcje anonimowe na funkcje strzałkowe, wystarczy, że pozbędziemy się słowa function,
+a następnie umieścimy => pomiędzy nawiasem zamykającym parametry a tym określającym ciało funkcji.
+Poniżej przedstawione są wcześniejsze przykłady, ale zapisane już za pomocą nowej notacji.*/
 
 
 const call = () => {

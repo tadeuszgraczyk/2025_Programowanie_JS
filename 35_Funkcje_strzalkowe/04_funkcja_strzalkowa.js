@@ -1,4 +1,6 @@
-/*Po drugie w sytuacji, gdy w ciele funkcji znajduje się tylko jedno wyrażenie1, możemy pominąć nawiasy klamrowe otaczające ciało. Nie używamy także słowa return, a mimo to wynik tego wyrażenia i tak zostanie zwrócony.
+/*Po drugie w sytuacji, gdy w ciele funkcji znajduje się tylko jedno wyrażenie1,
+możemy pominąć nawiasy klamrowe otaczające ciało. Nie używamy także słowa return,
+a mimo to wynik tego wyrażenia i tak zostanie zwrócony.
 * **************************************************************************************************/
 const call = () => console.log("Called");
 // Zniknął nawias klamrowy

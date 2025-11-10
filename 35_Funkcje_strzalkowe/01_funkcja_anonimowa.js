@@ -1,5 +1,7 @@
 /*
-Osławione już funkcje strzałkowe (ang. arrow functions) to krótszy zapis dla funkcji anonimowych, czyli funkcji bez nazwy. W innych językach programowania znane są najczęściej jako funkcje lambda, ale przyjęło się określać je tak a nie inaczej, gdyż nazwa pochodzi od charakterystycznej strzałki => w ich definicji. Aby pokazać, w jaki sposób je definiujemy, */
+Osławione już funkcje strzałkowe (ang. arrow functions) to krótszy zapis dla funkcji anonimowych, czyli funkcji bez nazwy.
+W innych językach programowania znane są najczęściej jako funkcje lambda, ale przyjęło się określać je tak a nie inaczej,
+gdyż nazwa pochodzi od charakterystycznej strzałki => w ich definicji. Aby pokazać, w jaki sposób je definiujemy, */
 
 //zacznijmy od kilku przykładów klasycznych funkcji anonimowych.
 
