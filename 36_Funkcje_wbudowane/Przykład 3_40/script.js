@@ -1,5 +1,8 @@
 // Przykład 3.40
-isFinite(Infinity);
-isFinite(-Infinity);
-isFinite(67);
-isFinite(2E12);
+let x;
+x = isFinite(Infinity);
+x = isFinite(-Infinity);
+x = isFinite(67);
+x = isFinite(2E12/0);
+console.log(x);
+
