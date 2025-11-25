@@ -1,37 +1,22 @@
-(function() {
-    const firstName = "Piotr";
+function init() {
+     const firstName = "Piotr";
+     function sayHello() {
+         const firstName = "Maciej";
+         const lastName = "Kowalski";
 
-    function sayHello() {
-        const firstName = "Maciej";
-        const lastName = "Kowalski";
+         console.log(`${firstName} ${lastName}`);
+     }
 
-        console.log(`${firstName} ${lastName}`);
-    }
+     //window.sayHello = sayHello;
 
-    window.sayHello = sayHello;
+     sayHello();
+ }
 
-    sayHello();
-})();
-
-// function init() {
-//     const firstName = "Piotr";
-
-//     function sayHello() {
-//         const firstName = "Maciej";
-//         const lastName = "Kowalski";
-
-//         console.log(`${firstName} ${lastName}`);
-//     }
-
-//     window.sayHello = sayHello;
-
-//     sayHello();
-// }
-
-// init();
+ init();
 
 if(true) {
     let number = 10;
+    console.log(number);
 }
 
-console.log(number);
+
