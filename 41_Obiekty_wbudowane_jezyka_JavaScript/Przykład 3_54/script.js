@@ -1,4 +1,6 @@
-//Przykład 3.54
-String.prototype.duzaLitera = function () {
-    return this.charAt(0).toUpperCase() + this.substr(1);
-}
+
+
+let dane = "to jest nasza opinia";
+let z_duza_litera = dane.duzaLitera();
+
+console.log(z_duza_litera);
