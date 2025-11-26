@@ -23,6 +23,6 @@ x = 5 + true;
 x = 5 + false;
 
 // Niezdefiniowane jest wymuszane na NaN (number)
-x = 5 + undefined;
+x = 5 + undefined;console.log(x, typeof x);
 
-console.log(x, typeof x);
+

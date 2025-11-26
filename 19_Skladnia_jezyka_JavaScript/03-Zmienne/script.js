@@ -2,9 +2,9 @@
 
 let firstName = 'Janusz';
 const lastName = 'Dolny';
-let age = 30;
+//let age = 30;
 
-console.log(age);
+//console.log(age);
 
 // Konwencje nazewnictwa
 // Tylko litery, cyfry, podkreślenia i znaki dolara
@@ -34,7 +34,7 @@ age = 31;
 console.log(age);
 
 const age2 = 17;
-age2 = 18;
+//age2 = 18;
 console.log(age2);
 
 // Za pomocą let możemy zadeklarować wartość bez przypisywania wartości
