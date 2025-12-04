@@ -4,7 +4,7 @@ function Klient(nazwisko_k, imie_k, zawod_k) {
     this.imie = imie_k;
     this.zawod = zawod_k;
     this.wypisz = function() {
-        console.log(this.nazwisko + ' ' + this.imie);
+        console.log(this.nazwisko + ' ' + this.imie+ " "+this.zawod);
     }
 }
 
@@ -15,3 +15,5 @@ let osoba2 = new Klient('Nowak', 'Anna', 'sekretarka');
 //3.48
 console.log(osoba1.nazwisko);
 console.log(osoba1["nazwisko"]);
+osoba1.wypisz()
+osoba2.wypisz()
