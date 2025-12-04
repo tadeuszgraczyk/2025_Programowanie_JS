@@ -1,2 +1,6 @@
 //przyklad 3.57
-var tab3 = new Array('Anna', 'Adam', 'Piotr', 'Ewa');var tab4 = ['Paweł', 'Marcin', 'Ela'];
+let tab3 = new Array('Anna', 'Adam', 'Piotr', 'Ewa');
+let tab4 = ['Paweł', 'Marcin', 'Ela'];
+
+console.table(tab3);
+console.table(tab4);

@@ -5,4 +5,4 @@ String.prototype.duzaLitera = function () {
 
 // Przykład 3.55
 let tx1 = 'komputer';
-document.write(tx1.duzaLitera());
+console.log(tx1.duzaLitera());

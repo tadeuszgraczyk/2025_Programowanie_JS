@@ -1,2 +1,3 @@
 //Przykład 3_58
-document.write(tab3[2]);
+let tab3 = new Array('Anna', 'Adam', 'Piotr', 'Ewa');
+console.log(tab3[2]);

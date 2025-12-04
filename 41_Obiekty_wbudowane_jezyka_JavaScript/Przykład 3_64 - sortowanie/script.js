@@ -1,4 +1,5 @@
 //przyklad 3.64
-var Tablica = new Array('Paweł', 'Anna', 'Maria', 'Adam', 'Piotr');
+let Tablica = new Array('Paweł', 'Anna', 'Maria', 'Adam', 'Piotr');
+console.table(Tablica);
 Tablica.sort();
-document.write(Tablica.join());
+console.log(Tablica.join());

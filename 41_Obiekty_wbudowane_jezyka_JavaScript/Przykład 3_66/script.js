@@ -3,7 +3,8 @@ function porownaj(a, b) {cx
     return a - b;
 }
 
-var Tablica = new Array(27, 100, 10, 450, 1654, 320);
-document.write('Bez sortowania: ' + Tablica.join());
-document.write("<br>" + 'Sortowanie domyślne: ');
+let Tablica = new Array(27, 100, 10, 450, 1654, 320);
+console.log('Bez sortowania: ' + Tablica.join());
+
 Tablica.sort();
+console.log('Sortowanie domyślne: '+ Tablica.join());
