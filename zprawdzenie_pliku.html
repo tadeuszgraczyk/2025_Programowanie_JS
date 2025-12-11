@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="message"></div>
+<script>
+    let message = document.getElementById("message");
+    if(window.FileReader) {
+        message.innerText = "Masz obsługę plików!";
+    }
+    else {
+            message.innerText = "Brak funkcjonalności FileReader :(";
+        }
+</script>
+</body>
+</html>
