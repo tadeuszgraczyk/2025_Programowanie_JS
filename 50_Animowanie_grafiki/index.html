@@ -2,10 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Animowanie grafiki</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
+<div class="container">
+    <div style="border-left: solid 3px #C14227; padding: 5px;">
+        <p><span color="#33cccc" style="color: #993366;"><i><span><img src="https://graczyk.weebly.com/uploads/4/4/1/7/4417340/pobrane_orig.png" width="100" height="100" /></span></i></span></p>
+        <p><span style="color: #800000;"><em>Animowanie grafiki na stronach internetowych to jedna z najbardziej kreatywnych i wizualnie satysfakcjonujących umiejętności, które można osiągnąć za pomocą JavaScriptu. Dzięki animacjom strony stają się bardziej interaktywne, atrakcyjne i angażujące dla użytkowników. JavaScript oferuje wiele sposobów na tworzenie animacji — od prostych zmian stylów CSS po zaawansowane animacje kanwy (Canvas) czy biblioteki takie jak <strong>GSAP</strong> czy <strong>Three.js</strong>.</em></span></p>
+        <p dir="auto" class="whitespace-break-spaces"></p>
+        <h3><span style="color: #800000;">Podstawowe techniki animacji w JavaScript</span></h3>
+        <h4><span style="color: #800000;">1. Animacje CSS + JavaScript</span></h4>
+        <p dir="auto" class="whitespace-break-spaces"><span style="color: #800000;">Najprostszy sposób na animowanie elementów to połączenie CSS z JavaScriptem. Można używać właściwości takich jak <code class="font-weight-400 rounded-md bg-state-ghost-hover p-1 text-sm whitespace-normal" data-testid="code-block">transition</code> lub <code class="font-weight-400 rounded-md bg-state-ghost-hover p-1 text-sm whitespace-normal" data-testid="code-block">animation</code> w CSS, a JavaScriptem sterować ich uruchamianiem.</span></p>
+        <p dir="auto" class="whitespace-break-spaces"><span style="color: #800000;"><strong>Przykład: Płynna zmiana koloru tła</strong></span></p>
+        <div data-testid="code-block" class="relative m-0 rounded-md border border-default bg-default whitespace-break-spaces">
+            <div data-exclude-copy="true" class="sticky top-0 mb-1 flex items-center justify-between gap-1 rounded-t-md border-b border-default bg-default px-3 font-sans select-none">
+                <div class="inline-flex items-center gap-2"></div>
+                <div class="inline-flex items-center gap-2"><span style="color: #e83e8c; font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; font-size: 14px;">&lt;div id="box" style="width: 100px; height: 100px; background-color: red; transition: background-color 1s;"&gt;</span></div>
+            </div>
+            <div class="text-sm text-default select-text"><code class="language-html">&lt;/div&gt; </code></div>
+            <div class="text-sm text-default select-text"><code class="language-html">&lt;button onclick="animateBox()"&gt;Zmień kolor&lt;/button&gt; </code></div>
+            <div class="text-sm text-default select-text"><code class="language-html">&lt;script&gt;<span class="javascript"> </span></code></div>
+            <div class="text-sm text-default select-text"><code class="language-html"><span class="javascript"> </span><span class="javascript">function</span><span class="javascript"> </span><span class="javascript">animateBox</span><span class="javascript">(</span><span class="javascript">) </span><span class="javascript">{ </span></code></div>
+            <div class="text-sm text-default select-text" style="margin-left: 30px;"><code class="language-html"><span class="javascript"> </span><span class="javascript">const</span><span class="javascript"> box = </span><span class="javascript">document</span><span class="javascript">.getElementById(</span><span class="javascript">"box"</span><span class="javascript">);</span></code></div>
+            <div class="text-sm text-default select-text" style="margin-left: 30px;"><code class="language-html"><span class="javascript"> </span><span class="javascript"> box.style.backgroundColor = </span><span class="javascript">"blue"</span><span class="javascript">; </span></code></div>
+            <div class="text-sm text-default select-text"><code class="language-html"><span class="javascript"> } </span></code></div>
+            <div class="text-sm text-default select-text"><code class="language-html"><span class="javascript"></span><span class="javascript"></span>&lt;/script&gt;</code></div>
+        </div>
+        <h4><span style="color: #800000;">2. Animacje z użyciem <code class="font-weight-400 rounded-md bg-state-ghost-hover p-1 text-sm whitespace-normal" data-testid="code-block">requestAnimationFrame</code></span></h4>
+        <p dir="auto" class="whitespace-break-spaces"><span style="color: #800000;">Funkcja <code class="font-weight-400 rounded-md bg-state-ghost-hover p-1 text-sm whitespace-normal" data-testid="code-block">requestAnimationFrame</code> pozwala na tworzenie płynnych animacji, synchronizując je z odświeżaniem ekranu. Jest to bardziej wydajne rozwiązanie niż używanie <code class="font-weight-400 rounded-md bg-state-ghost-hover p-1 text-sm whitespace-normal" data-testid="code-block">setInterval</code> lub <code class="font-weight-400 rounded-md bg-state-ghost-hover p-1 text-sm whitespace-normal" data-testid="code-block">setTimeout</code>.</span></p>
+        <p dir="auto" class="whitespace-break-spaces"><span style="color: #800000;"><strong>Przykład: Animacja przesuwania elementu</strong></span></p>
+        <div data-testid="code-block" class="relative m-0 rounded-md border border-default bg-default whitespace-break-spaces">
+            <div class="text-sm text-default select-text"><code class="language-html">&lt;div id="movingBox" style="width: 50px; height: 50px; background-color: green; position: absolute; left: 0;"&gt;</code></div>
+            <div class="text-sm text-default select-text"><code class="language-html">&lt;/div&gt; </code></div>
+            <div class="text-sm text-default select-text"><code class="language-html">&lt;script&gt; </code></div>
+            <div class="text-sm text-default select-text"><code class="language-html">const box = document.getElementById("movingBox")<span>;</span> </code></div>
+            <div class="text-sm text-default select-text"><code class="language-html">let position = 0<span>;</span> </code></div>
+            <div class="text-sm text-default select-text"><code class="language-html">function animate() { </code></div>
+            <div class="text-sm text-default select-text" style="margin-left: 30px;"><code class="language-html">position += 1<span>;</span> </code></div>
+            <div class="text-sm text-default select-text" style="margin-left: 30px;"><code class="language-html">box.style.left = position + "px"<span>;</span> </code></div>
+            <div class="text-sm text-default select-text" style="margin-left: 60px;"><code class="language-html">if (position &lt; 300) { </code></div>
+            <div class="text-sm text-default select-text" style="margin-left: 60px;"><code class="language-html">requestAnimationFrame(animate)<span>;</span> </code></div>
+            <div class="text-sm text-default select-text" style="margin-left: 60px;"><code class="language-html">} </code></div>
+            <div class="text-sm text-default select-text"><code class="language-html">} </code></div>
+            <div class="text-sm text-default select-text"><code class="language-html">animate()<span>;</span> </code></div>
+            <div class="text-sm text-default select-text"><code class="language-html">&lt;/script&gt;</code></div>
+        </div>
+        <h4><span style="color: #800000;">3. Animacje na kanwie (Canvas)</span></h4>
+        <p dir="auto" class="whitespace-break-spaces"><span style="color: #800000;">Element <code class="font-weight-400 rounded-md bg-state-ghost-hover p-1 text-sm whitespace-normal" data-testid="code-block">&lt;canvas&gt;</code> pozwala na rysowanie i animowanie grafiki 2D i 3D za pomocą JavaScriptu. Jest to idealne rozwiązanie do tworzenia gier, wizualizacji danych czy zaawansowanych efektów wizualnych.</span></p>
+        <p dir="auto" class="whitespace-break-spaces"><span style="color: #800000;"><strong>Przykład: Animacja poruszającego się koła</strong></span></p>
+        <div data-testid="code-block" class="relative m-0 rounded-md border border-default bg-default whitespace-break-spaces">
+            <div class="text-sm text-default select-text"><code class="language-html">&lt;canvas id="myCanvas" width="400" height="200" style="border:1px solid #000;"&gt;</code></div>
+            <div class="text-sm text-default select-text"><code class="language-html">&lt;/canvas&gt; </code></div>
+            <div class="text-sm text-default select-text"><code class="language-html">&lt;script&gt; </code></div>
+            <div class="text-sm text-default select-text" style="margin-left: 30px;"><code class="language-html">const canvas = document.getElementById("myCanvas")<span>;</span> </code></div>
+            <div class="text-sm text-default select-text" style="margin-left: 30px;"><code class="language-html">const ctx = canvas.getContext("2d")<span>;</span> </code></div>
+            <div class="text-sm text-default select-text" style="margin-left: 30px;"><code class="language-html">let x = 0<span>;</span> </code></div>
+            <div class="text-sm text-default select-text"><code class="language-html">function drawCircle() { </code></div>
+            <div class="text-sm text-default select-text" style="margin-left: 30px;"><code class="language-html">ctx.clearRect(0, 0, canvas.width, canvas.height)<span>; // Wyczyść kanwę</span> </code></div>
+            <div class="text-sm text-default select-text" style="margin-left: 30px;"><code class="language-html">ctx.beginPath()<span>;</span> </code></div>
+            <div class="text-sm text-default select-text" style="margin-left: 30px;"><code class="language-html">ctx.arc(x, 100, 20, 0, Math.PI * 2)<span>; // Narysuj koło</span> </code></div>
+            <div class="text-sm text-default select-text" style="margin-left: 30px;"><code class="language-html">ctx.fillStyle = "blue"<span>;</span> </code></div>
+            <div class="text-sm text-default select-text" style="margin-left: 30px;"><code class="language-html">ctx.fill()<span>;</span> x += 1<span>;</span> </code></div>
+            <div class="text-sm text-default select-text" style="margin-left: 30px;"><code class="language-html">if (x &lt; canvas.width + 20) { </code></div>
+            <div class="text-sm text-default select-text" style="margin-left: 60px;"><code class="language-html">requestAnimationFrame(drawCircle)<span>;</span> </code></div>
+            <div class="text-sm text-default select-text" style="margin-left: 30px;"><code class="language-html">} </code></div>
+            <div class="text-sm text-default select-text"><code class="language-html">} </code></div>
+            <div class="text-sm text-default select-text"><code class="language-html">drawCircle()<span>;</span> </code></div>
+            <div class="text-sm text-default select-text"><code class="language-html">&lt;/script&gt;</code></div>
+        </div>
+        <hr />
+        <h3><span style="color: #800000;">Biblioteki do animacji</span></h3>
+        <p dir="auto" class="whitespace-break-spaces"><span style="color: #800000;">Jeśli chcesz tworzyć bardziej zaawansowane animacje, warto skorzystać z gotowych bibliotek:</span></p>
+        <ul>
+            <li><span style="color: #800000;"><strong>GSAP (GreenSock Animation Platform)</strong> – potężne narzędzie do tworzenia zaawansowanych animacji.</span></li>
+            <li><span style="color: #800000;"><strong>Three.js</strong> – biblioteka do tworzenia grafiki 3D w przeglądarce.</span></li>
+            <li><span style="color: #800000;"><strong>Anime.js</strong> – lekka biblioteka do tworzenia animacji CSS, SVG i DOM.</span></li>
+        </ul>
+        <hr />
+        <h3><span style="color: #800000;">Dobre praktyki</span></h3>
+        <ul>
+            <li><span style="color: #800000;"><strong>Optymalizuj wydajność</strong> – unikaj zbyt skomplikowanych animacji, które mogą spowolnić stronę.</span></li>
+            <li><span style="color: #800000;"><strong>Używaj <code class="font-weight-400 rounded-md bg-state-ghost-hover p-1 text-sm whitespace-normal" data-testid="code-block">requestAnimationFrame</code></strong> – zamiast <code class="font-weight-400 rounded-md bg-state-ghost-hover p-1 text-sm whitespace-normal" data-testid="code-block">setInterval</code> lub <code class="font-weight-400 rounded-md bg-state-ghost-hover p-1 text-sm whitespace-normal" data-testid="code-block">setTimeout</code>, aby zapewnić płynność animacji.</span></li>
+            <li><span style="color: #800000;"><strong>Testuj na różnych urządzeniach</strong> – upewnij się, że animacje działają płynnie zarówno na komputerach, jak i na urządzeniach mobilnych.</span></li>
+        </ul>
+    </div>
+</div>
 
 </body>
 </html>

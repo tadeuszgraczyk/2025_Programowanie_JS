@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>32. Definiowanie funkcji w JavaScript</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container">
+<div class="container">
+<div style="border-left: solid 3px #C14227; padding: 5px;">
+    <p><span color="#33cccc" style="color: #993366;"><i><span><img src="https://graczyk.weebly.com/uploads/4/4/1/7/4417340/pobrane_orig.png" width="100" height="100" alt="iko" /></span></i></span></p>
+    <p dir="auto" class="whitespace-break-spaces"><em><span style="color: #800000;">Wyrażenia regularne (ang. regular expressions, w skrócie regex) to potężne narzędzie służące do wyszukiwania, dopasowywania i manipulowania tekstem na podstawie określonych wzorców. Są one nieocenione w walidacji formularzy, przetwarzaniu danych, parsowaniu plików tekstowych oraz wielu innych zadaniach związanych z obróbką tekstu. Dzięki nim można precyzyjnie definiować, jakie ciągi znaków są akceptowalne, a które nie.</span></em></p>
+    <hr />
+    <h3><span style="color: #800000;"><strong>Podstawowe elementy wyrażeń regularnych</strong></span></h3>
+    <p dir="auto" class="whitespace-break-spaces"><span style="color: #800000;">Wyrażenia regularne składają się z kombinacji znaków specjalnych i literałów. Oto kilka podstawowych elementów:</span></p>
+    <ul>
+        <li><span style="color: #800000;"><strong>Literały</strong> – dopasowują dokładnie dany znak, np. <code class="font-weight-400 rounded-md bg-state-ghost-hover p-1 text-sm whitespace-normal" data-testid="code-block">a</code> dopasuje małą literę "a".</span></li>
+        <li><span style="color: #800000;"><strong>Klasy znaków</strong> – np. <code class="font-weight-400 rounded-md bg-state-ghost-hover p-1 text-sm whitespace-normal" data-testid="code-block">[a-z]</code> dopasowuje małe litery od "a" do "z", a <code class="font-weight-400 rounded-md bg-state-ghost-hover p-1 text-sm whitespace-normal" data-testid="code-block">\d</code> dowolną cyfrę.</span></li>
+        <li><span style="color: #800000;"><strong>Kwantyfikatory</strong> – określają, ile razy dany wzorzec może wystąpić:</span></li>
+        <li><span style="color: #800000;"><strong>Specjalne znaki</strong> – np. <code class="font-weight-400 rounded-md bg-state-ghost-hover p-1 text-sm whitespace-normal" data-testid="code-block">.</code> dopasowuje dowolny znak (oprócz nowej linii), <code class="font-weight-400 rounded-md bg-state-ghost-hover p-1 text-sm whitespace-normal" data-testid="code-block">\s</code> dopasowuje białe znaki.</span>
+            <ul>
+                <li><code class="font-weight-400 rounded-md bg-state-ghost-hover p-1 text-sm whitespace-normal" data-testid="code-block">*</code> – zero lub więcej razy,</li>
+                <li><code class="font-weight-400 rounded-md bg-state-ghost-hover p-1 text-sm whitespace-normal" data-testid="code-block">+</code> – jeden lub więcej razy,</li>
+                <li><code class="font-weight-400 rounded-md bg-state-ghost-hover p-1 text-sm whitespace-normal" data-testid="code-block">?</code> – zero lub jeden raz,</li>
+                <li><code class="font-weight-400 rounded-md bg-state-ghost-hover p-1 text-sm whitespace-normal" data-testid="code-block">{n}</code> – dokładnie n razy.</li>
+            </ul>
+        </li>
+        <li><span style="color: #800000;"><strong>Grupy</strong> – nawiasy okrągłe <code class="font-weight-400 rounded-md bg-state-ghost-hover p-1 text-sm whitespace-normal" data-testid="code-block">()</code> służą do grupowania wzorców, np. <code class="font-weight-400 rounded-md bg-state-ghost-hover p-1 text-sm whitespace-normal" data-testid="code-block">(ab)+</code> dopasowuje "ab", "abab", itd.</span></li>
+    </ul>
+</div>
+</div>
+</div>
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
