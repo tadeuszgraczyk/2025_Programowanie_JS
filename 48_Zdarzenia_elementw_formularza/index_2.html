@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>48. Zdarzenia elementów formularza</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .card-header {
+            font-weight: bold;
+            background-color: #f8f9fa;
+        }
+        .code-block {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+<div class="container py-4">
+    <h1 class="text-center mb-4">48. Zdarzenia elementów formularza</h1>
+
+    <div class="card mb-4">
+        <div class="card-header">Wprowadzenie do zdarzeń elementów formularza</div>
+        <div class="card-body">
+            <p>
+                Zdarzenia elementów formularza są kluczowe dla tworzenia interaktywnych i responsywnych formularzy na stronach internetowych. Dzięki nim można reagować na działania użytkownika, takie jak wpisywanie tekstu, wybieranie opcji czy wysyłanie formularza. JavaScript umożliwia obsługę tych zdarzeń, co pozwala na dynamiczną walidację, aktualizację interfejsu oraz poprawę doświadczenia użytkownika.
+            </p>
+            <div class="alert alert-info">
+                <strong>Wskazówka dla PhpStorm:</strong> Możesz użyć skrótu <kbd>Alt + L</kbd>, aby szybko wstawić polską literę „ł” podczas pisania kodu.
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">Podstawowe zdarzenia formularza</div>
+        <div class="card-body">
+            <p>
+                Oto najczęściej używane zdarzenia związane z elementami formularza:
+            </p>
+            <ul>
+                <li><code>focus</code> – element otrzymuje focus (np. po kliknięciu).</li>
+                <li><code>blur</code> – element traci focus (np. po kliknięciu poza pole).</li>
+                <li><code>change</code> – wartość elementu uległa zmianie (np. wybrano inną opcję z listy rozwijanej).</li>
+                <li><code>input</code> – użytkownik wprowadza dane (np. wpisuje tekst).</li>
+                <li><code>submit</code> – formularz jest wysyłany.</li>
+                <li><code>reset</code> – formularz jest resetowany.</li>
+            </ul>
+
+            <h5 class="mt-4">Przykład: Obsługa zdarzenia <code>focus</code> i <code>blur</code></h5>
+            <div class="code-block">
+                const input = document.querySelector("input");<br>
+                input.addEventListener("focus", () => {<br>
+                &nbsp;&nbsp;console.log("Pole otrzymało focus!");<br>
+                });<br><br>
+                input.addEventListener("blur", () => {<br>
+                &nbsp;&nbsp;console.log("Pole straciło focus!");<br>
+                });
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">Zdarzenie <code>input</code></div>
+        <div class="card-body">
+            <p>
+                Zdarzenie <code>input</code> jest wywoływane za każdym razem, gdy użytkownik wprowadza lub usuwa znak w polu tekstowym. Jest to przydatne do dynamicznej walidacji lub aktualizacji interfejsu w czasie rzeczywistym.
+            </p>
+
+            <h5 class="mt-4">Przykład: Reagowanie na wprowadzanie tekstu</h5>
+            <div class="code-block">
+                const input = document.querySelector("input");<br>
+                input.addEventListener("input", (e) => {<br>
+                &nbsp;&nbsp;console.log(`Aktualna wartość: ${e.target.value}`);<br>
+                });
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">Zdarzenie <code>change</code></div>
+        <div class="card-body">
+            <p>
+                Zdarzenie <code>change</code> jest wywoływane, gdy wartość elementu ulegnie zmianie i element straci focus. Jest często używane dla pól wyboru, takich jak <code>select</code>, <code>checkbox</code> czy <code>radio</code>.
+            </p>
+
+            <h5 class="mt-4">Przykład: Obsługa zmiany wartości w polu wyboru</h5>
+            <div class="code-block">
+                const select = document.querySelector("select");<br>
+                select.addEventListener("change", (e) => {<br>
+                &nbsp;&nbsp;console.log(`Wybrana opcja: ${e.target.value}`);<br>
+                });
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">Zdarzenie <code>submit</code></div>
+        <div class="card-body">
+            <p>
+                Zdarzenie <code>submit</code> jest wywoływane, gdy użytkownik próbuje wysłać formularz. Można je wykorzystać do walidacji danych przed ich wysłaniem na serwer.
+            </p>
+
+            <h5 class="mt-4">Przykład: Walidacja formularza przed wysłaniem</h5>
+            <div class="code-block">
+                const form = document.querySelector("form");<br>
+                form.addEventListener("submit", (e) => {<br>
+                &nbsp;&nbsp;const input = document.querySelector("input[type='text']");<br>
+                &nbsp;&nbsp;if (input.value === "") {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;e.preventDefault(); // Zatrzymaj wysyłanie formularza<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;alert("Pole tekstowe nie może być puste!");<br>
+                &nbsp;&nbsp;}<br>
+                });
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">Praktyczne zastosowania</div>
+        <div class="card-body">
+            <p>
+                Zdarzenia elementów formularza mają wiele praktycznych zastosowań, takich jak:
+            </p>
+            <ul>
+                <li>Dynamiczna walidacja pól formularza.</li>
+                <li>Automatyczne uzupełnianie pól na podstawie wprowadzonych danych.</li>
+                <li>Wyświetlanie podpowiedzi lub komunikatów błędów.</li>
+                <li>Blokowanie wysyłania formularza, jeśli dane są niepoprawne.</li>
+            </ul>
+
+            <h5 class="mt-4">Przykład: Dynamiczna walidacja pola e-mail</h5>
+            <div class="code-block">
+                const emailInput = document.querySelector("input[type='email']");<br>
+                emailInput.addEventListener("input", (e) => {<br>
+                &nbsp;&nbsp;const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;<br>
+                &nbsp;&nbsp;if (!emailRegex.test(e.target.value)) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;e.target.style.borderColor = "red";<br>
+                &nbsp;&nbsp;} else {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;e.target.style.borderColor = "green";<br>
+                &nbsp;&nbsp;}<br>
+                });
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">Delegowanie zdarzeń w formularzach</div>
+        <div class="card-body">
+            <p>
+                Delegowanie zdarzeń (ang. *event delegation*) jest przydatne, gdy formularz zawiera wiele pól, a chcemy unikać dodawania funkcji obsługi do każdego z nich osobno. Możemy zarejestrować jedną funkcję obsługi na całym formularzu i sprawdzać, które pole wywołało zdarzenie.
+            </p>
+
+            <h5 class="mt-4">Przykład: Delegowanie zdarzeń dla pól formularza</h5>
+            <div class="code-block">
+                const form = document.querySelector("form");<br>
+                form.addEventListener("input", (e) => {<br>
+                &nbsp;&nbsp;if (e.target.tagName === "INPUT") {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log(`Zmiana w polu: ${e.target.name}`);<br>
+                &nbsp;&nbsp;}<br>
+                });
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">Podsumowanie</div>
+        <div class="card-body">
+            <p>
+                Zdarzenia elementów formularza są niezbędne do tworzenia interaktywnych i przyjaznych dla użytkownika formularzy. Dzięki JavaScript możemy reagować na różne interakcje użytkownika, co pozwala na dynamiczną walidację, aktualizację interfejsu oraz poprawę doświadczenia użytkownika.
+            </p>
+            <div class="alert alert-success">
+                <strong>Wskazówka dla PhpStorm:</strong> Podczas debugowania kodu JavaScript w PhpStorm, możesz użyć <kbd>Ctrl + D</kbd>, aby szybko uruchomić debugowanie i śledzić zdarzenia krok po kroku.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

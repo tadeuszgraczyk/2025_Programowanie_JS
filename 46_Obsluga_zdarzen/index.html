@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>46. Obsługa zdarzeń</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .card-header {
+      font-weight: bold;
+      background-color: #f8f9fa;
+    }
+    .code-block {
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 15px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      overflow-x: auto;
+    }
+    .highlight {
+      background-color: #fff3cd;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+<div class="container py-4">
+  <h1 class="text-center mb-4">46. Obsługa zdarzeń</h1>
+
+  <div class="card mb-4">
+    <div class="card-header">Wprowadzenie do obsługi zdarzeń</div>
+    <div class="card-body">
+      <p>
+        Obsługa zdarzeń (ang. *event handling*) to kluczowy mechanizm w JavaScript, który umożliwia reagowanie na interakcje użytkownika z stroną internetową. Dzięki zdarzeniom można wykonywać kod w odpowiedzi na różne działania, takie jak kliknięcia, przesuwanie myszy, naciskanie klawiszy czy ładowanie strony.
+      </p>
+      <div class="alert alert-info">
+        <strong>Wskazówka dla PhpStorm:</strong> Możesz użyć skrótu <kbd>Alt + Insert</kbd>, aby szybko dodać obsługę zdarzenia w kodzie JavaScript.
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">Podstawowe sposoby obsługi zdarzeń</div>
+    <div class="card-body">
+      <p>
+        W JavaScript istnieje kilka sposobów na obsługę zdarzeń. Oto najważniejsze z nich:
+      </p>
+      <ul>
+        <li><strong>Atrybuty zdarzeń w HTML:</strong> Prosty, ale mniej elastyczny sposób.</li>
+        <li><strong>Właściwości zdarzeń w JavaScript:</strong> Przypisanie funkcji do właściwości zdarzenia.</li>
+        <li><strong>Metoda <code>addEventListener</code>:</strong> Najbardziej elastyczny i zalecany sposób.</li>
+      </ul>
+
+      <h5 class="mt-4">1. Atrybuty zdarzeń w HTML</h5>
+      <div class="code-block">
+        &lt;button onclick="alert('Przycisk został kliknięty!')"&gt;Kliknij mnie&lt;/button&gt;
+      </div>
+
+      <h5 class="mt-4">2. Właściwości zdarzeń w JavaScript</h5>
+      <div class="code-block">
+        const przycisk = document.querySelector("button");<br>
+        przycisk.onclick = function() {<br>
+        &nbsp;&nbsp;alert("Przycisk został kliknięty!");<br>
+        };
+      </div>
+
+      <h5 class="mt-4">3. Metoda <code>addEventListener</code></h5>
+      <div class="code-block">
+        const przycisk = document.querySelector("button");<br>
+        przycisk.addEventListener("click", () => {<br>
+        &nbsp;&nbsp;alert("Przycisk został kliknięty!");<br>
+        });
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">Metoda <code>addEventListener</code></div>
+    <div class="card-body">
+      <p>
+        Metoda <code>addEventListener</code> jest najbardziej elastycznym sposobem obsługi zdarzeń. Pozwala na dodanie wielu funkcji obsługi do jednego zdarzenia oraz daje większą kontrolę nad zdarzeniami.
+      </p>
+
+      <h5 class="mt-4">Składnia</h5>
+      <div class="code-block">
+        element.addEventListener(zdarzenie, funkcja, opcje);
+      </div>
+
+      <h5 class="mt-4">Przykład: Dodawanie wielu funkcji obsługi</h5>
+      <div class="code-block">
+        const przycisk = document.querySelector("button");<br><br>
+        przycisk.addEventListener("click", () => {<br>
+        &nbsp;&nbsp;console.log("Pierwsza funkcja obsługi");<br>
+        });<br><br>
+        przycisk.addEventListener("click", () => {<br>
+        &nbsp;&nbsp;console.log("Druga funkcja obsługi");<br>
+        });
+      </div>
+
+      <h5 class="mt-4">Usuwanie funkcji obsługi</h5>
+      <div class="code-block">
+        function mojaFunkcja() {<br>
+        &nbsp;&nbsp;console.log("Zdarzenie obsłużone");<br>
+        }<br><br>
+        przycisk.addEventListener("click", mojaFunkcja);<br>
+        przycisk.removeEventListener("click", mojaFunkcja);
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">Obiekt zdarzenia</div>
+    <div class="card-body">
+      <p>
+        Podczas obsługi zdarzeń, funkcja obsługi (ang. *event handler*) otrzymuje obiekt <span class="highlight">zdarzenia</span> (ang. *event object*), który zawiera informacje o zdarzeniu. Obiekt ten ma wiele przydatnych właściwości i metod.
+      </p>
+
+      <h5 class="mt-4">Przykład: Wykorzystanie obiektu zdarzenia</h5>
+      <div class="code-block">
+        document.addEventListener("click", (e) => {<br>
+        &nbsp;&nbsp;console.log(`Typ zdarzenia: ${e.type}`);<br>
+        &nbsp;&nbsp;console.log(`Element docelowy: ${e.target.tagName}`);<br>
+        });
+      </div>
+
+      <h5 class="mt-4">Najważniejsze właściwości obiektu zdarzenia</h5>
+      <ul>
+        <li><code>type</code> – typ zdarzenia (np. "click").</li>
+        <li><code>target</code> – element, na którym nastąpiło zdarzenie.</li>
+        <li><code>currentTarget</code> – element, na którym zarejestrowano funkcję obsługi.</li>
+        <li><code>clientX</code>, <code>clientY</code> – pozycja kursora myszy względem okna przeglądarki.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">Zapobieganie domyślnym działaniom</div>
+    <div class="card-body">
+      <p>
+        Czasami chcemy zapobiec domyślnemu zachowaniu przeglądarki, np. przeładowaniu strony po kliknięciu linku. Możemy to zrobić za pomocą metody <code>preventDefault()</code> obiektu zdarzenia.
+      </p>
+
+      <h5 class="mt-4">Przykład: Zapobieganie domyślnemu działaniu</h5>
+      <div class="code-block">
+        document.querySelector("a").addEventListener("click", (e) => {<br>
+        &nbsp;&nbsp;e.preventDefault();<br>
+        &nbsp;&nbsp;alert("Przejście do linku zostało zablokowane!");<br>
+        });
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">Propagacja zdarzeń</div>
+    <div class="card-body">
+      <p>
+        Zdarzenia w DOM propagują się, czyli "bąbelkują" (ang. *bubbling*) od elementu docelowego do korzenia dokumentu. Można kontrolować tę propagację za pomocą metod <code>stopPropagation()</code> i <code>stopImmediatePropagation()</code>.
+      </p>
+
+      <h5 class="mt-4">Przykład: Zatrzymanie propagacji zdarzenia</h5>
+      <div class="code-block">
+        document.querySelector("button").addEventListener("click", (e) => {<br>
+        &nbsp;&nbsp;e.stopPropagation();<br>
+        &nbsp;&nbsp;alert("Zdarzenie nie będzie propagowane dalej!");<br>
+        });
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">Delegowanie zdarzeń</div>
+    <div class="card-body">
+      <p>
+        Delegowanie zdarzeń (ang. *event delegation*) to technika, która polega na zarejestrowaniu funkcji obsługi zdarzenia na rodzicu wielu elementów, zamiast na każdym z nich osobno. Jest to szczególnie przydatne przy dynamicznie dodawanych elementach.
+      </p>
+
+      <h5 class="mt-4">Przykład: Delegowanie zdarzeń</h5>
+      <div class="code-block">
+        document.querySelector("ul").addEventListener("click", (e) => {<br>
+        &nbsp;&nbsp;if (e.target.tagName === "LI") {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(`Kliknięto element: ${e.target.textContent}`);<br>
+        &nbsp;&nbsp;}<br>
+        });
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">Praktyczne zastosowania</div>
+    <div class="card-body">
+      <p>
+        Obsługa zdarzeń ma wiele praktycznych zastosowań, takich jak:
+      </p>
+      <ul>
+        <li>Tworzenie interaktywnych menu i przycisków.</li>
+        <li>Walidacja formularzy w czasie rzeczywistym.</li>
+        <li>Implementacja skrótów klawiszowych.</li>
+        <li>Tworzenie gier i animacji reagujących na ruch myszy.</li>
+      </ul>
+
+      <div class="alert alert-success">
+        <strong>Wskazówka dla PhpStorm:</strong> Podczas debugowania kodu JavaScript w PhpStorm, możesz użyć <kbd>Ctrl + D</kbd>, aby szybko uruchomić debugowanie i śledzić zdarzenia krok po kroku.
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">Podsumowanie</div>
+    <div class="card-body">
+      <p>
+        Obsługa zdarzeń to kluczowy element tworzenia interaktywnych stron internetowych. Dzięki JavaScript możemy reagować na różne interakcje użytkownika, co pozwala na tworzenie bardziej zaawansowanych i przyjaznych dla użytkownika aplikacji.
+      </p>
+      <div class="alert alert-warning">
+        <strong>Uwaga:</strong> Pamiętaj, że nadmierne używanie zdarzeń może wpłynąć na wydajność strony. Zawsze staraj się optymalizować kod, np. poprzez używanie <span class="highlight">delegowania zdarzeń</span> (ang. *event delegation*).
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

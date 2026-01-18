@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>50. Animowanie grafiki</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .card-header {
+      font-weight: bold;
+      background-color: #f8f9fa;
+    }
+    .code-block {
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 15px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      overflow-x: auto;
+    }
+    .highlight {
+      background-color: #fff3cd;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+    .demo-container {
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 5px;
+      margin: 20px 0;
+      text-align: center;
+    }
+    #demoBox {
+      width: 100px;
+      height: 100px;
+      background-color: #007bff;
+      margin: 20px auto;
+      transition: all 0.3s;
+    }
+    #demoCanvas {
+      background-color: #e9ecef;
+      margin: 20px auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+<div class="container py-4">
+  <h1 class="text-center mb-4">50. Animowanie grafiki</h1>
+
+  <div class="card mb-4">
+    <div class="card-header">Wprowadzenie do animacji grafiki</div>
+    <div class="card-body">
+      <p>
+        Animowanie grafiki na stronach internetowych to kluczowy element tworzenia interaktywnych i atrakcyjnych witryn. Dzięki JavaScript możemy tworzyć płynne animacje, które reagują na działania użytkownika lub zmieniają się dynamicznie w czasie. Animacje mogą dotyczyć zarówno prostych zmian stylów CSS, jak i bardziej zaawansowanych efektów na elementach <code>canvas</code> lub SVG.
+      </p>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">Animacje CSS + JavaScript</div>
+    <div class="card-body">
+      <p>
+        Najprostszy sposób na animowanie elementów to połączenie CSS z JavaScriptem. Możemy używać właściwości CSS, takich jak <code>transition</code> lub <code>animation</code>, a JavaScriptem sterować ich uruchamianiem.
+      </p>
+
+      <h5 class="mt-4">Przykład: Płynna zmiana koloru tła</h5>
+      <div class="demo-container">
+        <div id="demoBox"></div>
+        <button class="btn btn-primary" onclick="changeColor()">Zmień kolor</button>
+      </div>
+      <div class="code-block">
+        &lt;style&gt;<br>
+        &nbsp;&nbsp;#demoBox {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;transition: background-color 0.5s;<br>
+        &nbsp;&nbsp;}<br>
+        &lt;/style&gt;<br><br>
+        &lt;div id="demoBox"&gt;&lt;/div&gt;<br>
+        &lt;button onclick="changeColor()"&gt;Zmień kolor&lt;/button&gt;<br><br>
+        &lt;script&gt;<br>
+        &nbsp;&nbsp;function changeColor() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;const box = document.getElementById("demoBox");<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;box.style.backgroundColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;<br>
+        &nbsp;&nbsp;}<br>
+        &lt;/script&gt;
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">Animacje z użyciem <code>requestAnimationFrame</code></div>
+    <div class="card-body">
+      <p>
+        Metoda <code>requestAnimationFrame</code> umożliwia tworzenie płynnych animacji, synchronizując je z odświeżaniem ekranu. Jest to bardziej wydajne rozwiązanie niż używanie <code>setInterval</code> lub <code>setTimeout</code>, ponieważ animacja jest renderowana w optymalnym momencie.
+      </p>
+
+      <h5 class="mt-4">Przykład: Animacja przesuwania elementu</h5>
+      <div class="demo-container">
+        <div id="movingBox" style="width: 50px; height: 50px; background-color: #28a745; position: relative; left: 0;"></div>
+        <button class="btn btn-success" onclick="startAnimation()">Uruchom animację</button>
+      </div>
+      <div class="code-block">
+        &lt;div id="movingBox" style="width: 50px; height: 50px; background-color: #28a745; position: relative; left: 0;"&gt;&lt;/div&gt;<br>
+        &lt;button onclick="startAnimation()"&gt;Uruchom animację&lt;/button&gt;<br><br>
+        &lt;script&gt;<br>
+        &nbsp;&nbsp;function startAnimation() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;const box = document.getElementById("movingBox");<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;let position = 0;<br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;function animate() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position += 2;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box.style.left = position + "px";<br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (position &lt; 300) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;requestAnimationFrame(animate);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;animate();<br>
+        &nbsp;&nbsp;}<br>
+        &lt;/script&gt;
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">Animacje na kanwie (Canvas)</div>
+    <div class="card-body">
+      <p>
+        Element <code>&lt;canvas&gt;</code> umożliwia rysowanie i animowanie grafiki 2D za pomocą JavaScriptu. Jest to idealne rozwiązanie do tworzenia gier, wizualizacji danych czy zaawansowanych efektów wizualnych.
+      </p>
+
+      <h5 class="mt-4">Przykład: Animacja poruszającego się koła</h5>
+      <div class="demo-container">
+        <canvas id="demoCanvas" width="400" height="200"></canvas>
+      </div>
+      <div class="code-block">
+        &lt;canvas id="demoCanvas" width="400" height="200"&gt;&lt;/canvas&gt;<br><br>
+        &lt;script&gt;<br>
+        &nbsp;&nbsp;const canvas = document.getElementById("demoCanvas");<br>
+        &nbsp;&nbsp;const ctx = canvas.getContext("2d");<br>
+        &nbsp;&nbsp;let x = 0;<br><br>
+        &nbsp;&nbsp;function drawCircle() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;ctx.clearRect(0, 0, canvas.width, canvas.height); // Wyczyść kanwę<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;ctx.beginPath();<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;ctx.arc(x, 100, 20, 0, Math.PI * 2); // Narysuj koło<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;ctx.fillStyle = "#dc3545";<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;ctx.fill();<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;x += 2;<br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;if (x &lt; canvas.width + 20) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;requestAnimationFrame(drawCircle);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;}<br><br>
+        &nbsp;&nbsp;drawCircle();<br>
+        &lt;/script&gt;
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">Biblioteki do animacji</div>
+    <div class="card-body">
+      <p>
+        Jeśli chcesz tworzyć bardziej zaawansowane animacje, warto skorzystać z gotowych bibliotek, które ułatwiają pracę i oferują dodatkowe funkcjonalności:
+      </p>
+      <ul>
+        <li><strong>GSAP (GreenSock Animation Platform):</strong> Potężne narzędzie do tworzenia zaawansowanych animacji.</li>
+        <li><strong>Anime.js:</strong> Lekka biblioteka do tworzenia animacji CSS, SVG i DOM.</li>
+        <li><strong>Three.js:</strong> Biblioteka do tworzenia grafiki 3D w przeglądarce.</li>
+      </ul>
+
+      <h5 class="mt-4">Przykład: Użycie Anime.js</h5>
+      <div class="code-block">
+        &lt;div id="animeBox" style="width: 100px; height: 100px; background-color: #6f42c1;"&gt;&lt;/div&gt;<br><br>
+        &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"&gt;&lt;/script&gt;<br>
+        &lt;script&gt;<br>
+        &nbsp;&nbsp;anime({<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;targets: '#animeBox',<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;translateX: 250,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;rotate: '1turn',<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;duration: 2000,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;easing: 'easeInOutSine'<br>
+        &nbsp;&nbsp;});<br>
+        &lt;/script&gt;
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">Dobre praktyki</div>
+    <div class="card-body">
+      <p>
+        Podczas tworzenia animacji warto pamiętać o kilku zasadach, które pomogą zachować wydajność i płynność:
+      </p>
+      <ul>
+        <li><strong>Optymalizuj wydajność:</strong> Unikaj zbyt skomplikowanych animacji, które mogą spowolnić stronę.</li>
+        <li><strong>Używaj <code>requestAnimationFrame</code>:</strong> Zamiast <code>setInterval</code> lub <code>setTimeout</code>, aby zapewnić płynność animacji.</li>
+        <li><strong>Testuj na różnych urządzeniach:</strong> Upewnij się, że animacje działają płynnie zarówno na komputerach, jak i na urządzeniach mobilnych.</li>
+        <li><strong>Unikaj nadmiernych animacji:</strong> Zbyt wiele animacji może rozpraszać użytkownika i obciążać przeglądarkę.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">Podsumowanie</div>
+    <div class="card-body">
+      <p>
+        Animowanie grafiki w JavaScript to fascynujący temat, który pozwala ożywić strony internetowe i stworzyć unikalne doświadczenia dla użytkowników. Dzięki różnym technikom, takim jak animacje CSS, <code>requestAnimationFrame</code> czy biblioteki takie jak GSAP, możesz tworzyć zarówno proste, jak i zaawansowane efekty wizualne.
+      </p>
+      <p>
+        Pamiętaj, że kluczem do sukcesu jest równowaga między estetyką a wydajnością. Dobrze zaprojektowane animacje mogą znacznie poprawić doświadczenie użytkownika, ale nadmierne użycie może prowadzić do przeciwnych efektów.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  function changeColor() {
+    const box = document.getElementById("demoBox");
+    box.style.backgroundColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;
+  }
+
+  function startAnimation() {
+    const box = document.getElementById("movingBox");
+    let position = 0;
+
+    function animate() {
+      position += 2;
+      box.style.left = position + "px";
+
+      if (position < 300) {
+        requestAnimationFrame(animate);
+      }
+    }
+
+    animate();
+  }
+
+  const canvas = document.getElementById("demoCanvas");
+  const ctx = canvas.getContext("2d");
+  let x = 0;
+
+  function drawCircle() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
+    ctx.arc(x, 100, 20, 0, Math.PI * 2);
+    ctx.fillStyle = "#dc3545";
+    ctx.fill();
+    x += 2;
+
+    if (x < canvas.width + 20) {
+      requestAnimationFrame(drawCircle);
+    }
+  }
+
+  drawCircle();
+</script>
+</body>
+</html>
