@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>35. Funkcje strzałkowe</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .card-header {
+            font-weight: bold;
+            background-color: #f8f9fa;
+        }
+        .code-block {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+<div class="container py-4">
+    <h1 class="text-center mb-4">35. Funkcje strzałkowe</h1>
+
+    <div class="card mb-4">
+        <div class="card-header">Wprowadzenie do funkcji strzałkowych</div>
+        <div class="card-body">
+            <p>
+                Funkcje strzałkowe (ang. <em>arrow functions</em>) to skrócona składnia definiowania funkcji w JavaScript, wprowadzona w standardzie ES6 (ECMAScript 2015). Są one szczególnie przydatne do pisania krótkich, zwięzłych funkcji. Funkcje strzałkowe mają kilka istotnych różnic w porównaniu z tradycyjnymi funkcjami, które warto znać.
+            </p>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">Składnia funkcji strzałkowych</div>
+        <div class="card-body">
+            <p>
+                Funkcje strzałkowe mają kilka wariantów składni, w zależności od liczby parametrów i złożoności funkcji.
+            </p>
+
+            <h5 class="mt-4">1. Funkcja bez parametrów</h5>
+            <div class="code-block">
+                const powitanie = () => {<br>
+                &nbsp;&nbsp;return "Witaj!";<br>
+                };
+            </div>
+
+            <h5 class="mt-4">2. Funkcja z jednym parametrem</h5>
+            <div class="code-block">
+                const kwadrat = x => {<br>
+                &nbsp;&nbsp;return x * x;<br>
+                };
+            </div>
+
+            <h5 class="mt-4">3. Funkcja z wieloma parametrami</h5>
+            <div class="code-block">
+                const suma = (a, b) => {<br>
+                &nbsp;&nbsp;return a + b;<br>
+                };
+            </div>
+
+            <h5 class="mt-4">4. Skrócona składnia dla pojedynczej instrukcji</h5>
+            <div class="code-block">
+                const kwadrat = x => x * x;
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">Różnice między funkcjami strzałkowymi a tradycyjnymi</div>
+        <div class="card-body">
+            <p>
+                Funkcje strzałkowe różnią się od tradycyjnych funkcji w kilku kluczowych aspektach:
+            </p>
+            <ul>
+                <li><strong>Brak własnego kontekstu <code>this</code>:</strong> Funkcje strzałkowe nie tworzą własnego kontekstu <code>this</code>. Zamiast tego, dziedziczą <code>this</code> z otaczającego kontekstu.</li>
+                <li><strong>Brak argumentów <code>arguments</code>:</strong> Funkcje strzałkowe nie mają obiektu <code>arguments</code>. Zamiast tego, można użyć parametru rest <code>...</code>.</li>
+                <li><strong>Nie mogą być używane jako konstruktory:</strong> Nie można używać funkcji strzałkowych z operatorem <code>new</code>.</li>
+                <li><strong>Brak własnej właściwości <code>prototype</code>:</strong> Funkcje strzałkowe nie mają właściwości <code>prototype</code>.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">Zastosowanie funkcji strzałkowych</div>
+        <div class="card-body">
+            <p>
+                Funkcje strzałkowe są szczególnie przydatne w następujących przypadkach:
+            </p>
+            <ul>
+                <li>Krótkie funkcje zwrotne (ang. <em>callback functions</em>).</li>
+                <li>Funkcje, które nie wymagają własnego kontekstu <code>this</code>.</li>
+                <li>Funkcje, które mają być zwięzłe i czytelne.</li>
+            </ul>
+
+            <h5 class="mt-4">Przykład: Funkcja zwrotna</h5>
+            <div class="code-block">
+                const liczby = [1, 2, 3, 4, 5];<br>
+                const kwadraty = liczby.map(x => x * x);<br>
+                console.log(kwadraty); // [1, 4, 9, 16, 25]
+            </div>
+
+            <h5 class="mt-4">Przykład: Użycie w metodach tablicowych</h5>
+            <div class="code-block">
+                const liczby = [1, 2, 3, 4, 5];<br>
+                const parzyste = liczby.filter(x => x % 2 === 0);<br>
+                console.log(parzyste); // [2, 4]
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">Kontekst <code>this</code> w funkcjach strzałkowych</div>
+        <div class="card-body">
+            <p>
+                Jedną z najważniejszych cech funkcji strzałkowych jest to, że nie tworzą one własnego kontekstu <code>this</code>. Zamiast tego, dziedziczą <code>this</code> z otaczającego kontekstu. Jest to szczególnie przydatne w funkcjach zwrotnych, gdzie chcemy zachować kontekst obiektu.
+            </p>
+
+            <h5 class="mt-4">Przykład: Kontekst <code>this</code> w obiektach</h5>
+            <div class="code-block">
+                const osoba = {<br>
+                &nbsp;&nbsp;imie: "Tadeusz",<br>
+                &nbsp;&nbsp;powitanie: function() {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;setTimeout(() => {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(`Witaj, ${this.imie}!`);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}, 1000);<br>
+                &nbsp;&nbsp;}<br>
+                };<br><br>
+                osoba.powitanie(); // Witaj, Tadeusz!
+            </div>
+            <p>
+                W powyższym przykładzie, funkcja strzałkowa użyta w <code>setTimeout</code> dziedziczy kontekst <code>this</code> z metody <code>powitanie</code>, dzięki czemu ma dostęp do właściwości <code>imie</code>.
+            </p>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">Parametry rest i domknięcia</div>
+        <div class="card-body">
+            <p>
+                Funkcje strzałkowe mogą korzystać z parametrów rest oraz domknięć (ang. <em>closures</em>), podobnie jak tradycyjne funkcje.
+            </p>
+
+            <h5 class="mt-4">Przykład: Parametry rest</h5>
+            <div class="code-block">
+                const suma = (...args) => args.reduce((a, b) => a + b, 0);<br>
+                console.log(suma(1, 2, 3)); // 6
+            </div>
+
+            <h5 class="mt-4">Przykład: Domknięcia</h5>
+            <div class="code-block">
+                const tworzLicznik = () => {<br>
+                &nbsp;&nbsp;let licznik = 0;<br>
+                &nbsp;&nbsp;return () => ++licznik;<br>
+                };<br><br>
+                const licznik = tworzLicznik();<br>
+                console.log(licznik()); // 1<br>
+                console.log(licznik()); // 2
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">Podsumowanie</div>
+        <div class="card-body">
+            <p>
+                Funkcje strzałkowe to potężne narzędzie w JavaScript, które pozwala na pisanie krótszego, bardziej zwięzłego i czytelnego kodu. Są szczególnie przydatne w funkcjach zwrotnych oraz w przypadkach, gdzie chcemy zachować kontekst <code>this</code> z otaczającego zakresu.
+            </p>
+            <p>
+                Pamiętaj, że funkcje strzałkowe nie są odpowiednie w każdej sytuacji. Nie używaj ich jako konstruktorów ani w przypadkach, gdzie potrzebujesz własnego kontekstu <code>this</code> lub obiektu <code>arguments</code>.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domknięcia w JavaScript</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .card-header {
+      font-weight: bold;
+      background-color: #f8f9fa;
+    }
+    .code-block {
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 15px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      overflow-x: auto;
+    }
+    .highlight {
+      background-color: #fff3cd;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+<div class="container py-4">
+  <h1 class="text-center mb-4">Domknięcia w JavaScript</h1>
+
+  <div class="card mb-4">
+    <div class="card-header">Wprowadzenie do domknięć</div>
+    <div class="card-body">
+      <p>
+        Domknięcie (ang. <em>closure</em>) to jedno z najważniejszych pojęć w JavaScript. Jest to funkcja, która ma dostęp do własnego zakresu (scope), zakresu funkcji zewnętrznej oraz do zmiennych globalnych, nawet po zakończeniu wykonania funkcji zewnętrznej.
+      </p>
+      <p>
+        Tadeusz, domknięcia są szczególnie przydatne w PhpStorm, gdzie możesz łatwo debugować i analizować ich działanie, korzystając z narzędzi deweloperskich dostępnych w tym środowisku.
+      </p>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">Jak działają domknięcia?</div>
+    <div class="card-body">
+      <p>
+        Każda funkcja w JavaScript ma swój własny zakres, który zawiera zmienne zadeklarowane wewnątrz tej funkcji. Funkcja wewnętrzna ma dostęp do zmiennych zadeklarowanych w funkcji zewnętrznej, nawet po zakończeniu wykonania funkcji zewnętrznej.
+      </p>
+      <ul>
+        <li><strong>Zakres (Scope):</strong> Funkcja wewnętrzna ma dostęp do zmiennych zadeklarowanych w funkcji zewnętrznej.</li>
+        <li><strong>Zachowanie stanu:</strong> Domknięcie pozwala na zachowanie stanu zmiennych z funkcji zewnętrznej, nawet po zakończeniu jej wykonania.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">Przykład domknięcia</div>
+    <div class="card-body">
+      <p>
+        Poniżej znajduje się przykład domknięcia, który pokazuje, jak funkcja wewnętrzna ma dostęp do zmiennej z funkcji zewnętrznej, nawet po zakończeniu jej wykonania.
+      </p>
+      <div class="code-block">
+        function tworzLicznik() {
+        let licznik = 0; // zmienna lokalna w funkcji tworzLicznik
+
+        return function() {
+        licznik += 1; // funkcja wewnętrzna ma dostęp do zmiennej licznik
+        return licznik;
+        };
+        }
+
+        const licznik = tworzLicznik();
+
+        console.log(licznik()); // 1
+        console.log(licznik()); // 2
+        console.log(licznik()); // 3
+      </div>
+      <p>
+        W powyższym przykładzie funkcja <code>tworzLicznik</code> deklaruje zmienną <code>licznik</code> i zwraca funkcję wewnętrzną. Funkcja wewnętrzna ma dostęp do zmiennej <code>licznik</code> nawet po zakończeniu wykonania funkcji <code>tworzLicznik</code>.
+      </p>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">Zastosowania domknięć</div>
+    <div class="card-body">
+      <p>
+        Domknięcia mają wiele praktycznych zastosowań w JavaScript. Oto kilka z nich:
+      </p>
+      <ul>
+        <li><strong>Prywatne zmienne:</strong> Domknięcia pozwalają na tworzenie prywatnych zmiennych, które nie są dostępne poza funkcją.</li>
+        <li><strong>Funkcje zwrotne (callbacks):</strong> Domknięcia są często używane w funkcjach zwrotnych, aby zachować stan między wywołaniami.</li>
+        <li><strong>Moduły:</strong> Domknięcia są podstawą wzorca modułowego w JavaScript, który pozwala na tworzenie prywatnych zmiennych i metod.</li>
+      </ul>
+
+      <h5 class="mt-4">Przykład: Prywatne zmienne</h5>
+      <div class="code-block">
+        function tworzOsobe(imie) {
+        let _imie = imie; // prywatna zmienna
+
+        return {
+        pobierzImie: function() {
+        return _imie;
+        },
+        ustawImie: function(nowImie) {
+        _imie = nowImie;
+        }
+        };
+        }
+
+        const osoba = tworzOsobe("Tadeusz");
+        console.log(osoba.pobierzImie()); // Tadeusz
+        osoba.ustawImie("Jan");
+        console.log(osoba.pobierzImie()); // Jan
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">Dlaczego domknięcia są ważne?</div>
+    <div class="card-body">
+      <p>
+        Domknięcia są ważne z kilku powodów:
+      </p>
+      <ul>
+        <li><strong>Enkapsulacja:</strong> Pozwalają na ukrywanie zmiennych i logiki wewnętrznej, co jest kluczowe dla tworzenia modularnego i bezpiecznego kodu.</li>
+        <li><strong>Zachowanie stanu:</strong> Pozwalają na zachowanie stanu między wywołaniami funkcji, co jest przydatne w wielu scenariuszach, takich jak liczniki, timery, itp.</li>
+      </ul>
+      <p>
+        Tadeusz, jeśli pracujesz w PhpStorm, możesz łatwo debugować i analizować domknięcia, korzystając z narzędzi deweloperskich dostępnych w tym środowisku. Możesz używać skrótu <kbd>Alt + L</kbd>, aby szybko wstawić polską literę „ł” podczas pisania kodu.
+      </p>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">Podsumowanie</div>
+    <div class="card-body">
+      <p>
+        Domknięcia są fundamentalnym konceptem w JavaScript, który pozwala na pisanie bardziej elastycznego i modularnego kodu. Są one szczególnie przydatne w przypadkach, gdzie chcemy zachować stan między wywołaniami funkcji lub ukryć pewne zmienne i logikę wewnętrzną.
+      </p>
+      <p>
+        Zrozumienie domknięć jest kluczowe dla każdego programisty JavaScript, ponieważ pozwala na tworzenie bardziej zaawansowanych i bezpiecznych aplikacji.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
