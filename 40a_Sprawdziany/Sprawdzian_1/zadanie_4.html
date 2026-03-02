@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 4</title>
+</head>
+<body>
+
+<h1>Zadanie 4</h1>
+<pre>
+    1.	Bazując na poprzednim przykładzie zastosuj konstruktor z parametrami do utworzenia obiektu rycerz.
+    2.	Obiekt Rycerz powinien posiadać pola:
+        a.	nazwisko (łańuch znaków),
+        b.	doswiadzenie (liczba od 1 do 10);
+        c.	uzbrojenie (tablica łańcuchów).
+    3.	Konstruktor powinien zawierać metody:
+        a.	info (zwraca informacje o rycerzu),
+        b.	dodaj_uzbrojenie (możliwość uzupełnienia tablicy o nowe elementy).
+    4.	Posługując się zdefiniowanym konstruktorem utwórz dwóch rycerzy .
+    5.	Uzupełnij uzbrojenie pierwszego rycerza i wyświetl jego dane w konsoli.
+    6.	Uzupełnij dane drugiego rycerza i wyświetl dane na stronie.
+    7.	Dodaj na stronie dwa przyciski, które mogą służyć: pierwszy do zwiększania, a drugi do zmniejszania doświadczenia pierwszego rycerza.
+
+</pre>
+
+<div id="wynik"></div>
+
+<button id="plus">Zwiększ doświadczenie</button>
+<button id="minus">Zmniejsz doświadczenie</button>
+
+<script>
+
+    // 1. Definicja konstruktora.
+    // Nazwa zaczyna się wielką literą (konwencja JS).
+
+    function Rycerz(nazwisko, doswiadzenie) {
+
+        // 2. Pola obiektu (tworzone dla każdej instancji)
+        this.nazwisko = nazwisko;
+        this.doswiadzenie = doswiadzenie;
+        this.uzbrojenie = [];
+
+        // 3a. Metoda zwracająca informacje o rycerzu
+        this.info = function() {
+            return "Rycerz: " + this.nazwisko +
+                ", Doświadczenie: " + this.doswiadzenie +
+                ", Uzbrojenie: " + this.uzbrojenie.join(", ");
+        };
+
+        // 3b. Metoda dodająca element do uzbrojenia
+        this.dodaj_uzbrojenie = function(element) {
+            this.uzbrojenie.push(element);
+        };
+    }
+
+
+    // 4. Tworzenie dwóch obiektów przy pomocy new
+    const rycerz1 = new Rycerz("Zawisza", 5);
+    const rycerz2 = new Rycerz("Lancelot", 7);
+
+
+    // 5. Uzupełnienie uzbrojenia pierwszego rycerza
+    rycerz1.dodaj_uzbrojenie("miecz");
+    rycerz1.dodaj_uzbrojenie("tarcza");
+
+    // Wyświetlenie w konsoli
+    console.log(rycerz1.info());
+
+
+    // 6. Uzupełnienie uzbrojenia drugiego rycerza
+    rycerz2.dodaj_uzbrojenie("włócznia");
+    rycerz2.dodaj_uzbrojenie("hełm");
+
+    // Wyświetlenie na stronie
+    document.getElementById("wynik").innerHTML = rycerz2.info();
+
+
+    // 7. Obsługa przycisków dla pierwszego rycerza
+
+    document.getElementById("plus").addEventListener("click", function() {
+
+        // Zwiększamy doświadczenie
+        rycerz1.doswiadzenie++;
+
+        console.log("Po zwiększeniu: " + rycerz1.info());
+    });
+
+    document.getElementById("minus").addEventListener("click", function() {
+
+        // Zmniejszamy doświadczenie
+        rycerz1.doswiadzenie--;
+
+        console.log("Po zmniejszeniu: " + rycerz1.info());
+    });
+
+</script>
+
+</body>
+</html>

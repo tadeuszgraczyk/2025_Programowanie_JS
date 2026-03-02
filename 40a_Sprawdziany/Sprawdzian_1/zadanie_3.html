@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Zadanie 3</title>
+</head>
+<body>
+<h1>Zadanie 3</h1>
+<pre>
+  1.	Do poprzednio zdefiniowanego obiektu dodaj metodę zwracającą informację o wojowniku.
+  2.	Wykorzystaj metodę do wyświetlenia danych Mieszka w konsoli.
+  3.	Wykorzystaj metodę do wyświetlenia danych na stronie.
+  4.	Dodaj na stronie przycisk, którego kliknięcie wyświetli dane Mieszka na stronie.
+
+</pre>
+
+<!-- Miejsce na wyświetlenie danych -->
+<div id="wynik"></div>
+
+<!-- Przycisk wywołujący metodę -->
+<button id="pokaz">Pokaż dane wojownika</button>
+
+<script>
+
+  // Definicja obiektu z dodaną metodą
+  const wojownik = {
+
+    nazwa: "Mieszko",
+    punkty_doswiadczenia: 5,
+    punkty_zycia: 0.6,
+    uzbrojenie: ["miecz", "tarcza", "szyszak"],
+
+    // 1. Dodanie metody do obiektu.
+    // Metoda to po prostu funkcja przypisana do właściwości.
+    // Używamy this, aby odwołać się do bieżącego obiektu.
+
+    informacje: function() {
+
+      // this odnosi się do obiektu, który wywołał metodę
+      return "Wojownik: " + this.nazwa +
+              ", PD: " + this.punkty_doswiadczenia +
+              ", PŻ: " + this.punkty_zycia +
+              ", Uzbrojenie: " + this.uzbrojenie.join(", ");
+    }
+  };
+
+
+  // 2. Wyświetlenie danych w konsoli
+  console.log(wojownik.informacje());
+
+
+  // 3. Wyświetlenie danych na stronie
+ // document.getElementById("wynik").innerHTML = wojownik.informacje();
+
+
+  // 4. Obsługa kliknięcia przycisku
+  document.getElementById("pokaz").addEventListener("click", function() {
+
+    // Po kliknięciu ponownie wyświetlamy dane w divie
+    document.getElementById("wynik").innerHTML = wojownik.informacje();
+
+  });
+
+</script>
+
+</body>
+</html>
