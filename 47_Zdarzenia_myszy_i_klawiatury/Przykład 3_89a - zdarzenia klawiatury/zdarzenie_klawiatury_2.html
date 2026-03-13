@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zdarzenia klawiatury</title>
+</head>
+<body>
+<p>Program działa tak długo puki nie zostanie naciśnięty klawisz ENTER</p>
+<script>
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            alert("Naciśnięto Enter!");
+        }
+    });
+</script>
+</body>
+</html>
