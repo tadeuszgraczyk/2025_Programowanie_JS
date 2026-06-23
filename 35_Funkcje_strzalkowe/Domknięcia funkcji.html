@@ -66,20 +66,20 @@
         Poniżej znajduje się przykład domknięcia, który pokazuje, jak funkcja wewnętrzna ma dostęp do zmiennej z funkcji zewnętrznej, nawet po zakończeniu jej wykonania.
       </p>
       <div class="code-block">
-        function tworzLicznik() {
-        let licznik = 0; // zmienna lokalna w funkcji tworzLicznik
-
-        return function() {
-        licznik += 1; // funkcja wewnętrzna ma dostęp do zmiennej licznik
-        return licznik;
-        };
-        }
-
-        const licznik = tworzLicznik();
-
-        console.log(licznik()); // 1
-        console.log(licznik()); // 2
-        console.log(licznik()); // 3
+        function tworzLicznik() {<br>
+        let licznik = 0; // zmienna lokalna w funkcji tworzLicznik<br>
+        <br>
+        return function() {<br>
+        licznik += 1; // funkcja wewnętrzna ma dostęp do zmiennej licznik<br>
+        return licznik;<br>
+        };<br>
+        }<br>
+        <br>
+        const licznik = tworzLicznik();<br>
+        <br>
+        console.log(licznik()); // 1<br>
+        console.log(licznik()); // 2<br>
+        console.log(licznik()); // 3<br>
       </div>
       <p>
         W powyższym przykładzie funkcja <code>tworzLicznik</code> deklaruje zmienną <code>licznik</code> i zwraca funkcję wewnętrzną. Funkcja wewnętrzna ma dostęp do zmiennej <code>licznik</code> nawet po zakończeniu wykonania funkcji <code>tworzLicznik</code>.
@@ -101,23 +101,23 @@
 
       <h5 class="mt-4">Przykład: Prywatne zmienne</h5>
       <div class="code-block">
-        function tworzOsobe(imie) {
-        let _imie = imie; // prywatna zmienna
-
-        return {
-        pobierzImie: function() {
-        return _imie;
-        },
-        ustawImie: function(nowImie) {
-        _imie = nowImie;
-        }
-        };
-        }
-
-        const osoba = tworzOsobe("Tadeusz");
-        console.log(osoba.pobierzImie()); // Tadeusz
-        osoba.ustawImie("Jan");
-        console.log(osoba.pobierzImie()); // Jan
+        function tworzOsobe(imie) {<br>
+        let _imie = imie; // prywatna zmienna<br>
+        <br>
+        return {<br>
+        pobierzImie: function() {<br>
+        return _imie;<br>
+        },<br>
+        ustawImie: function(nowImie) {<br>
+        _imie = nowImie;<br>
+        }<br>
+        };<br>
+        }<br>
+        <br>
+        const osoba = tworzOsobe("Tadeusz");<br>
+        console.log(osoba.pobierzImie()); // Tadeusz<br>
+        osoba.ustawImie("Jan");<br>
+        console.log(osoba.pobierzImie()); // Jan<br>
       </div>
     </div>
   </div>
