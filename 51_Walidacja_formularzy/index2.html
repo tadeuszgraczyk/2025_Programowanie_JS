@@ -71,15 +71,15 @@
 
             <h5 class="mt-4">Przykład: Sprawdzanie, czy pole nie jest puste</h5>
             <div class="code-block">
-                function sprawdzPole(pole) {
-                if (pole.value.trim() === "") {
-                pole.style.borderColor = "red";
-                return false;
-                } else {
-                pole.style.borderColor = "green";
-                return true;
-                }
-                }
+                function sprawdzPole(pole) {<br>
+                if (pole.value.trim() === "") {<br>
+                pole.style.borderColor = "red";<br>
+                return false;<br>
+                } else {<br>
+                pole.style.borderColor = "green";<br>
+                return true;<br>
+                }<br>
+                }<br>
             </div>
         </div>
     </div>
@@ -100,19 +100,19 @@
                 </div>
             </div>
             <div class="code-block">
-                const emailInput = document.getElementById("emailInput");
-                const emailError = document.getElementById("emailError");
+                const emailInput = document.getElementById("emailInput");<br>
+                const emailError = document.getElementById("emailError");<br>
 
-                emailInput.addEventListener("input", () => {
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(emailInput.value)) {
-                emailError.textContent = "Niepoprawny format adresu e-mail!";
-                emailInput.style.borderColor = "red";
-                } else {
-                emailError.textContent = "";
-                emailInput.style.borderColor = "green";
-                }
-                });
+                emailInput.addEventListener("input", () => {<br>
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;<br>
+                if (!emailRegex.test(emailInput.value)) {<br>
+                emailError.textContent = "Niepoprawny format adresu e-mail!";<br>
+                emailInput.style.borderColor = "red";<br>
+                } else {<br>
+                emailError.textContent = "";<br>
+                emailInput.style.borderColor = "green";<br>
+                }<br>
+                });<br>
             </div>
         </div>
     </div>
@@ -139,25 +139,25 @@
                 </form>
             </div>
             <div class="code-block">
-                const form = document.getElementById("demoForm");
-
-                form.addEventListener("submit", (e) => {
-                const nameInput = document.getElementById("nameInput");
-                const emailInput = document.getElementById("emailInput2");
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-                if (nameInput.value.trim() === "") {
-                alert("Pole 'Imię' nie może być puste!");
-                e.preventDefault();
-                return;
-                }
-
-                if (!emailRegex.test(emailInput.value)) {
-                alert("Niepoprawny format adresu e-mail!");
-                e.preventDefault();
-                return;
-                }
-                });
+                const form = document.getElementById("demoForm");<br>
+                <br>
+                form.addEventListener("submit", (e) => {<br>
+                const nameInput = document.getElementById("nameInput");<br>
+                const emailInput = document.getElementById("emailInput2");<br>
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;<br>
+                <br>
+                if (nameInput.value.trim() === "") {<br>
+                alert("Pole 'Imię' nie może być puste!");<br>
+                e.preventDefault();<br>
+                return;<br>
+                }<br>
+                <br>
+                if (!emailRegex.test(emailInput.value)) {<br>
+                alert("Niepoprawny format adresu e-mail!");<br>
+                e.preventDefault();<br>
+                return;<br>
+                }<br>
+                });<br>
             </div>
         </div>
     </div>
@@ -176,13 +176,13 @@
 
             <h5 class="mt-4">Przykład: Walidacja hasła</h5>
             <div class="code-block">
-                function sprawdzHaslo(haslo) {
-                const hasloRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-                return hasloRegex.test(haslo);
-                }
-
-                console.log(sprawdzHaslo("Haslo123!")); // true
-                console.log(sprawdzHaslo("haslo")); // false
+                function sprawdzHaslo(haslo) {<br>
+                const hasloRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;<br>
+                return hasloRegex.test(haslo);<br>
+                }<br>
+                <br>
+                console.log(sprawdzHaslo("Haslo123!")); // true<br>
+                console.log(sprawdzHaslo("haslo")); // false<br>
             </div>
         </div>
     </div>
