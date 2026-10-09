@@ -2,10 +2,126 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Title</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        /* Tylko akcenty wizualne — treść pozostaje bez zmian */
+        body {
+            background-color: #f8f9fa;
+        }
+        .definition {
+            background-color: #eef5ff;
+            border-left: 4px solid #007bff;
+        }
+        h2 {
+            border-bottom: 2px solid #dee2e6;
+            padding-bottom: 0.3rem;
+        }
+        h3 {
+            color: #007bff;
+        }
+        ul li u {
+            text-decoration-color: #adb5bd;
+        }
+    </style>
 </head>
 <body>
+
+<!-- Nagłówek strony -->
+<div class="jumbotron jumbotron-fluid bg-primary text-white rounded mb-4">
+    <div class="container">
+        <h1 class="display-4">11 Framework platforma programistyczna</h1>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- Definicja -->
+    <div class="card definition mb-4 shadow-sm">
+        <div class="card-body">
+            <h2 class="h4 font-weight-bold">Definicja</h2>
+            <p class="card-text"><u>Framework—platformaprogramistyczna</u> — Do tworzenia aplikacji internetowych często wykorzystuje się platformy programistyczne, które definiują strukturę aplikacji, określają mechanizm ich działania oraz dostarczają biblioteki umożliwiające wykonywanie określonych zadań.</p>
+            <p class="card-text mb-0">Framework ma zdefiniowaną <u>podstawową strukturę aplikacji</u>, czyli elementy, które pozostają niezmienne we wszystkich utworzonych za jego pomocą aplikacjach. Programista tworzy aplikację, dostosowując poszczególne komponenty do wymagań realizowanego projektu. Ma on również możliwość przygotowania nowych elementów niezbędnych w projektowanej strukturze aplikacji.</p>
+        </div>
+    </div>
+
+    <!-- Cechy frameworka -->
+    <h2 class="mt-4">Cechy frameworka</h2>
+    <p>Typowe cechy frameworka to:</p>
+    <ul class="list-group list-group-flush mb-4 shadow-sm rounded">
+        <li class="list-group-item"><u>Odwrócenie sterowania</u> — przepływ sterowania jest narzucany przez framework, a nie przez programistę.</li>
+        <li class="list-group-item"><u>Domyślne zachowanie</u> — framework powinien mieć domyślną konfigurację, która musi być użyteczna i dawać określony wynik.</li>
+        <li class="list-group-item"><u>Rozszerzalność</u> — programista powinien mieć możliwość rozszerzania poszczególnych komponentów frameworka, jeśli chce je rozbudować o dodatkową funkcjonalność.</li>
+        <li class="list-group-item"><u>Zamknięta struktura wewnętrzna</u> — programista może rozbudowywać framework, ale nie poprzez modyfikację domyślnego kodu.</li>
+    </ul>
+
+    <!-- Zalety i wady -->
+    <h2>Zalety i wady</h2>
+    <p>Tworzenie aplikacji z wykorzystaniem frameworków wymaga od programisty <u>napisania mniejszej ilości kodu</u>. Aplikacja zbudowana w ten sposób ma dobrą wewnętrzną strukturę, jest właściwie zaprojektowana i przetestowana. Ceną za elastyczną budowę jest <u>niższa wydajność tworzonego oprogramowania</u>. Frameworki mogą być stosowane jako szkielety zarówno kompletnych aplikacji, jak i pojedynczych komponentów.</p>
+
+    <!-- Popularne frameworki -->
+    <h2>Popularne frameworki</h2>
+    <p>Do popularnych frameworków należą:</p>
+    <ul class="list-group list-group-flush mb-4 shadow-sm rounded">
+        <li class="list-group-item"><u>Angular</u>,</li>
+        <li class="list-group-item"><u>React</u>,</li>
+        <li class="list-group-item"><u>.NET core</u>,</li>
+        <li class="list-group-item"><u>Django</u>,</li>
+        <li class="list-group-item"><u>Zend Framework</u>.</li>
+    </ul>
+
+    <!-- Opisy frameworków w siatce kart -->
+    <div class="row">
+
+        <div class="col-lg-6 mb-3">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h3 class="h5 card-title">Angular</h3>
+                    <p class="card-text">Angular to wspierany i rozwijany przez firmę Google otwarty framework przeznaczony do tworzenia aplikacji jednostronicowych w języku JavaScript. Jego zadaniem jest wdrażanie do aplikacji internetowych wzorca projektowego <u>MVC</u> (ang. Model-View--Controller). Zawiera własny kompilator HTML, wbudowany system szablonów i wiele funkcji ułatwiających tworzenie strony (animacje, filtrowanie, elementy interfejsu użytkownika).</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 mb-3">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h3 class="h5 card-title">React</h3>
+                    <p class="card-text">React to otwarty framework przeznaczony do tworzenia interfejsów graficznych aplikacji jednostronicowych i mobilnych w języku JavaScript. Interfejs użytkownika został oparty na <u>komponentach</u>. Każdy komponent jest funkcją JavaScript zdefiniowaną przez użytkownika. React został wyposażony w język <u>JSX</u>, który jest nakładką na JavaScript i rozszerza jego funkcjonalność.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 mb-3">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h3 class="h5 card-title">.NET core</h3>
+                    <p class="card-text">.NET core to wieloplatformowy i otwarty framework przeznaczony do tworzenia aplikacji internetowych z użyciem wzorca <u>MVC</u>. Aplikacje mogą być tworzone za pomocą języka C#, F#, Visual Basic. Framework może działać w systemach Windows, Linux i macOS oraz na urządzeniach mobilnych korzystających z Xamarin. Może być używany do tworzenia aplikacji opartych na <u>chmurze</u>. Taka aplikacja działa w oparciu o mikroserwisy (podprogramy), a jej architektura jest zorientowana na usługi.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 mb-3">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h3 class="h5 card-title">Django</h3>
+                    <p class="card-text">Django to otwarty framework przeznaczony do tworzenia aplikacji internetowych napisany w języku Python. Umożliwia przygotowanie aplikacji w oparciu o wzorzec <u>MTV</u> (ang. Model-Template-View) pokrewny wzorcowi MVC. Ma prosty system szablonów, automatycznie tworzony panel administracyjny oraz własny serwer do testowania aplikacji.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 mb-3">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h3 class="h5 card-title">Zend Framework</h3>
+                    <p class="card-text">Zend Framework to platforma programistyczna przeznaczona do tworzenia aplikacji internetowych w języku PHP. Zawiera zbiór bibliotek obsługujących podstawowe mechanizmy działania aplikacji oraz biblioteki użytkowe obsługujące na przykład wysyłanie e-maili, komunikację z innymi aplikacjami internetowymi itp. Oferuje również implementację modelu <u>MVC</u>, który może zostać wykorzystany do utworzenia struktury aplikacji.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
 
 </body>
 </html>
