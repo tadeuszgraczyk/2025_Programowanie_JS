@@ -1,26 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Środowiska programistyczne</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        /* Tylko akcenty wizualne — treść pozostaje bez zmian */
+        body {
+            background-color: #f8f9fa;
+        }
+        .definition {
+            background-color: #fff5f2;
+            border-left: solid 3px #C14227;
+        }
+        h2 {
+            border-bottom: 2px solid #dee2e6;
+            padding-bottom: 0.3rem;
+        }
+        h3 {
+            color: #C14227;
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-    <h1>7 Środowiska programistyczne</h1>
-    <div style="border-left: solid 3px #C14227; padding: 5px;">
-        <p><i></i><span style="color: #993366;"><i>W tym temacie: poznajemy przykłady
-        środowisk programistycznych. Instalujemy środowisko node oraz system
-        kontroli wersji Git. Na zajęciach będziemy posługiwali się środowiskiem
-        <strong>Visual Studio Code</strong> lub <strong>WebStorm</strong>. Konta
-        szkolne do tego ostatniego zostaną rozdysponowane na
-        zajęciach.</i></span></p>
-        <p><span style="color: #993366;"><i><img class="img-fluid"
-                                                 src="https://graczyk.weebly.com/uploads/4/4/1/7/4417340/gnome-face-devilish-svg_orig.png"
-                                                 alt="logo" width="125" height="128"></i></span></p>
-        <a href="https://docs.google.com/document/d/1X9aNs-g8h1lXGs0t7r6VIrSv8IKRm_0YyUyKYkCWBko/edit?usp=sharing">7.1 Informacja do tematu</a><br>
-        <a href="https://www.youtube.com/watch?v=sz0-7eLhoGU">Co to jest IDE - krótko i na temat na Youtube</a>
+
+<!-- Nagłówek strony -->
+<div class="jumbotron jumbotron-fluid bg-dark text-white rounded mb-4">
+    <div class="container">
+        <h1 class="display-4">7 Środowiska programistyczne</h1>
     </div>
 </div>
+
+<div class="container">
+
+    <!-- Wprowadzenie (oryginalna treść) -->
+    <div class="card definition mb-4 shadow-sm">
+        <div class="card-body">
+            <p class="card-text"><i></i><span style="color: #993366;"><i>W tym temacie: poznajemy przykłady
+            środowisk programistycznych. Instalujemy środowisko node oraz system
+            kontroli wersji Git. Na zajęciach będziemy posługiwali się środowiskiem
+            <strong>Visual Studio Code</strong> lub <strong>WebStorm</strong>. Konta
+            szkolne do tego ostatniego zostaną rozdysponowane na
+            zajęciach.</i></span></p>
+            <p class="card-text"><span style="color: #993366;"><i><img class="img-fluid rounded"
+                                                                       src="https://graczyk.weebly.com/uploads/4/4/1/7/4417340/gnome-face-devilish-svg_orig.png"
+                                                                       alt="logo" width="125" height="128"></i></span></p>
+            <a class="d-block mb-2" href="https://docs.google.com/document/d/1X9aNs-g8h1lXGs0t7r6VIrSv8IKRm_0YyUyKYkCWBko/edit?usp=sharing">7.1 Informacja do tematu</a>
+            <a class="d-block" href="https://www.youtube.com/watch?v=sz0-7eLhoGU">Co to jest IDE - krótko i na temat na Youtube</a>
+        </div>
+    </div>
+
+    <!-- ==================== NOWA SEKCJA: WebStorm ==================== -->
+
+    <h2 class="mt-4">WebStorm — zintegrowane środowisko programistyczne</h2>
+
+    <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+            <h3 class="h5 card-title">Czym jest WebStorm?</h3>
+            <p class="card-text"><u>WebStorm</u> — komercyjne <strong>zintegrowane środowisko programistyczne</strong> (IDE) opracowane przez firmę <strong>JetBrains</strong>, przeznaczone do tworzenia aplikacji internetowych w językach <u>JavaScript</u>, <u>TypeScript</u>, a także z użyciem takich technologii jak HTML, CSS, Node.js, React, Angular czy Vue.js. Środowisko jest napisane w języku Java i działa na systemach Windows, Linux oraz macOS.</p>
+            <p class="card-text mb-0">Podobnie jak w przypadku frameworków, środowisko IDE ma zdefiniowaną strukturę projektu, dostarcza mechanizmy ułatwiające pracę (edytor, debugger, integracja z systemem kontroli wersji) i automatyzuje typowe zadania programisty.</p>
+        </div>
+    </div>
+
+    <h3 class="h5">Najważniejsze cechy i funkcje WebStorm</h3>
+    <ul class="list-group list-group-flush mb-4 shadow-sm rounded">
+        <li class="list-group-item"><u>Intelligent code assistant</u> — podpowiedzi kodu (autouzupełnianie), statyczna analiza jakości kodu i wykrywanie błędów jeszcze przed uruchomieniem aplikacji.</li>
+        <li class="list-group-item"><u>Refaktoryzacja</u> — automatyczne, bezpieczne zmienianie struktury kodu (zmiana nazw zmiennych i funkcji, wyodrębnianie metod) w całym projekcie.</li>
+        <li class="list-group-item"><u>Debugowanie i testowanie</u> — wbudowany debugger dla JavaScript i Node.js oraz integracja z narzędziami do testowania (np. Jest, Mocha).</li>
+        <li class="list-group-item"><u>Integracja z systemem kontroli wersji</u> — natywna obsługa <strong>Git</strong> (i innych systemów, np. GitHub, Mercurial) bezpośrednio z poziomu IDE.</li>
+        <li class="list-group-item"><u>Wbudowany terminal i menedżer pakietów</u> — uruchamianie poleceń npm/yarn oraz zadań (run configurations) bez wychodzenia z edytora.</li>
+        <li class="list-group-item"><u>Integracja z frameworkami</u> — gotowe szablony projektów i wsparcie dla Angular, React, Vue.js czy aplikacji Node.js.</li>
+    </ul>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <div class="card border-success h-100">
+                <div class="card-header bg-success text-white">Zalety</div>
+                <div class="card-body">
+                    <p class="card-text">Bogaty zestaw funkcji „z pudełka", wysoka wydajność na dużych projektach, silne wsparcie dla TypeScript i frameworków JS, rozbudowany debugger i profilowanie, częste aktualizacje od JetBrains.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <div class="card border-danger h-100">
+                <div class="card-header bg-danger text-white">Wady</div>
+                <div class="card-body">
+                    <p class="card-text">Licencja komercyjna (płatna) — choć dostępne są darmowe wersje dla uczniów i studentów oraz wersje próbne, środowisko jest cięższe od prostych edytorów i wymaga mocniejszego sprzętu.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card bg-light mb-4 shadow-sm">
+        <div class="card-body">
+            <h3 class="h5 card-title">Licencjonowanie — ważne dla uczniów</h3>
+            <p class="card-text mb-0">WebStorm jest produktem płatnym, jednak JetBrains oferuje <strong>darmowe licencje edukacyjne</strong> — dla uczniów i studentów szkół oraz nauczycieli (na podstawie szkolnego adresu e-mail lub dokumentu potwierdzającego status). Konta szkolne, o których mowa we wprowadzeniu, są właśnie takimi licencjami edukacyjnymi. Licencja odnawiana jest corocznie, dopóki trwa status ucznia.</p>
+        </div>
+    </div>
+
+</div>
+
 </body>
 </html>
