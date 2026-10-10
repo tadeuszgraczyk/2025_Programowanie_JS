@@ -1,18 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>T03 - Porównanie programowania obiektowego i strukturalnego</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #333333;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .main-container {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        h1 {
+            color: #2c3e50;
+            font-weight: 700;
+            font-size: 1.8rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 2px solid #eaeaea;
+        }
+        .page-title {
+            font-size: 2.2rem;
+            color: #1a252f;
+            border-bottom: none;
+            margin-top: 0;
+        }
+        .intro-box {
+            border-left: solid 4px #C14227;
+            background-color: #fff8f6;
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0 30px 0;
+        }
+        .intro-box p {
+            margin-bottom: 10px;
+        }
+        .intro-text {
+            color: #993366;
+            font-style: italic;
+            font-size: 1.05rem;
+            margin: 0;
+        }
+        .btn-custom {
+            background-color: #C14227;
+            color: #fff;
+            border-radius: 4px;
+            padding: 6px 14px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.2s ease;
+        }
+        .btn-custom:hover {
+            background-color: #a5371f;
+            color: #fff;
+            text-decoration: none;
+        }
+        ul {
+            background: #fdfdfd;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px 20px 20px 40px;
+            margin-bottom: 25px;
+        }
+        li {
+            margin-bottom: 8px;
+            color: #4a5568;
+        }
+        li:last-child {
+            margin-bottom: 0;
+        }
+    </style>
 </head>
 <body>
+
 <div class="container">
-    <h1>3	Programowanie strukturalne vs programowanie obiektowe</h1>
-    <div style="border-left: solid 3px #C14227; padding: 5px;">
-        <p><span style="color: #993366;"><i>W tym temacie: skupimy się nad różnicą
-        między programowaniem strukturalnym, a obiektowym.</i></span></p>
-        <a href="https://drive.google.com/file/d/16E9UOAsW0r1NZjF8IiuJl3dr1RPdlmxC/view?usp=sharing">Zwięźle i na temat</a>
+    <div class="main-container">
+
+        <header>
+            <h1 class="page-title">T03 - Porównanie programowania obiektowego i strukturalnego</h1>
+            <div class="intro-box">
+                <p><span class="intro-text"><i>W tym temacie: skupimy się nad różnicą między programowaniem strukturalnym, a obiektowym.</i></span></p>
+                <a href="https://drive.google.com/file/d/16E9UOAsW0r1NZjF8IiuJl3dr1RPdlmxC/view?usp=sharing" class="btn-custom" target="_blank">Zwięźle i na temat</a>
+            </div>
+        </header>
+
+        <h1>Programowanie strukturalne</h1>
+        <ul>
+            <li>Paradygmat programowania zakładający rozdzielenie funkcjonalności programu na moduły (podprogramy). Komunikują się one ze sobą przez określone interfejsy.</li>
+            <li>Jest rozszerzeniem programowania proceduralnego (poprawa przejrzystości i jakości kodu oraz przyśpieszenie tworzenia oprogramowania).</li>
+        </ul>
+
+        <h1>Założenia programowania strukturalnego</h1>
+        <ul>
+            <li>Podzielone bloki kodu mają jeden punkt wejścia (mogą mieć wiele punktów wyjścia).</li>
+            <li>Wykonywanie wyrażeń w określonej kolejności.</li>
+            <li>Używanie instrukcji warunkowych (<code>if</code>, <code>if else</code>).</li>
+            <li>Używanie pętli (<code>for</code>, <code>while</code>, <code>do while</code>).</li>
+            <li>Unikanie instrukcji skoku (<code>goto</code>).</li>
+            <li>Unikanie instrukcji <code>break</code>, <code>continue</code>.</li>
+        </ul>
+
+        <h1>Programowanie obiektowe</h1>
+        <ul>
+            <li>Paradygmat programowania zakładający reprezentację problemów w postaci obiektów, przypisanie im działań (metod), które mogą wykonywać oraz umieszczenie pól, które opisują dany obiekt.</li>
+            <li>Jest to podejście bardziej naturalne dla ludzi, bardziej zgodne z rzeczywistością.</li>
+        </ul>
+
+        <h1>Założenia programowania obiektowego</h1>
+        <ul>
+            <li>Abstrakcja</li>
+            <li>Hermetyzacja danych (enkapsulacja)</li>
+            <li>Dziedziczenie</li>
+            <li>Polimorfizm</li>
+        </ul>
+
+        <h1>Abstrakcja</h1>
+        <ul>
+            <li>Zredukowanie właściwości opisywanego obiektu do najbardziej podstawowych, ograniczenie zakresu funkcjonalności obiektu do kluczowych dla danego zagadnienia działań.</li>
+            <li>Ukrycie funkcjonalności za interfejsem, uogólnienie implementacji.</li>
+        </ul>
+
+        <h1>Enkapsulacja</h1>
+        <ul>
+            <li>Inaczej hermetyzacja danych.</li>
+            <li>Dostęp do składowych jest ograniczony za pomocą dobrze określonego interfejsu, czyli obiekt udostępnia tylko pewien zbiór metod, które są widoczne z zewnątrz i mogą być wywoływane.</li>
+            <li>Dostęp do pól obiektu powinien być realizowany poprzez odpowiednie metody (settery/gettery), a nie przez bezpośredni dostęp do nich.</li>
+        </ul>
+
+        <h1>Dziedziczenie</h1>
+        <ul>
+            <li>Mechanizm umożliwiający wywodzenie nowych klas z klas już istniejących, wraz z przejmowaniem ich metod. Dzięki czemu zyskujemy wszystkie już istniejące funkcjonalności, które dodatkowo możemy rozszerzyć lub zmienić.</li>
+        </ul>
+
+        <h1>Polimorfizm</h1>
+        <ul>
+            <li>Mechanizm pozwalający na używanie metod itp. na różny sposób, np. przeciążając metodę <code>toString</code>, aby akceptowała zmienne typu <code>int</code>, <code>float</code>, <code>decimal</code> i każdą z nich konwertowała właściwie do ciągu znakowego.</li>
+        </ul>
+
+        <h1>Różnice</h1>
+        <ul>
+            <li>W programowaniu strukturalnym mamy podprogramy (funkcje), które odpowiednio ułożone i wywołane tworzą program.</li>
+            <li>Natomiast w programowaniu obiektowym funkcjonalności są przypisane obiektom, zatem trudniej tutaj o pomyłkę, np. taką jak przekazanie złej zmiennej do funkcji.</li>
+        </ul>
+
     </div>
 </div>
+
 </body>
 </html>
